@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##This API just read the messages and repond with a little message, the API does not send customs messages, thats your part ;)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+## Add your access_token
+In the callback controller in the url method add the access_token from your facebook developers account
 
 * ...
