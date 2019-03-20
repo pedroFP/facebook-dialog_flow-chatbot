@@ -1,6 +1,6 @@
 # README
 
-### In this project I have two  ``` chatbots ``` one is made using ```facebook chatbot``` and the other one was made using ``` dialogflow ``` from api.ai
+ In this project I have two  ``` chatbots ``` one was made using ```facebook chatbot``` and the other one was made using ``` dialogflow ``` from api.ai
 
 ## Facebook chatbot
 ---
