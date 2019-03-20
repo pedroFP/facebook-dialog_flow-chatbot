@@ -1,8 +1,9 @@
 class CallbackController < ApplicationController
+  #Facebook chatbot
   protect_from_forgery with: :null_session
 
   def index
-    if params["hub.verify_token"] == "pedro"
+    if params["hub.verify_token"] == "your_token"
       render text: params["hub.challenge"]
     end
   end

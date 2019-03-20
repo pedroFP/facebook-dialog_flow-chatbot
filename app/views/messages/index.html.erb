@@ -1,0 +1,32 @@
+<h1>Bienvenido al ChatBot</h1>
+<form action="<%= messages_index_path %>">
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label">Nombre</label>
+    <div class="col-sm-11">
+      <input id="text" type="text" class="form-control" name="text">
+    </div>
+    <button id="send-btn" type="button">Enviar</button>
+  </div>
+</form>
+<div id="comments">
+
+</div>
+<script>
+  $('#send-btn').click(function(){
+    $.ajax({
+      url: '<%= messages_index_path %>',
+      type: 'POST',
+      dataType: 'script',
+      data: {message: $('#text').val()}
+    })
+    .done(function() {
+      console.log($('#text').val());
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  });
+</script>
