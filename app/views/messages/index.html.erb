@@ -1,32 +1,43 @@
-<h1>Bienvenido al ChatBot</h1>
-<form action="<%= messages_index_path %>">
-    <div class="form-group row">
-    <label class="col-sm-1 col-form-label">Nombre</label>
-    <div class="col-sm-11">
-      <input id="text" type="text" class="form-control" name="text">
-    </div>
-    <button id="send-btn" type="button">Enviar</button>
-  </div>
-</form>
-<div id="comments">
+<div class="container">
+  <h1>Bienvenido al ChatBot</h1>
 
+  <!-- CHATBOX -->
+    <div class="chat-main">
+      <div class="offset-md-8">
+        <div class="col-md-12 chat-header rounded-top bg-primary text-white">
+            <div class="row">
+                <div class="col-8 username pl-2">
+                    <i class="fa fa-circle text-success" aria-hidden="true"></i>
+                    <h6 class="m-0">Cirilo</h6>
+                </div>
+                <div class="col-4 options text-right pr-2">
+                    <i class="fa fa-times hide-chat-box" aria-hidden="true"></i>
+                  </div>
+            </div>
+        </div>
+        <div class="chat-content">
+            <div class="col-md-12 chats border">
+                <ul class="p-0">
+                  <div id="chat">
+                  </div>
+                </ul>
+            </div>
+            <div class="col-md-12 message-box border pl-2 pr-2 border-top-0">
+              <%= form_with url: messages_index_path do |f| %>
+                <div class="row">
+                  <div class="col-10">
+                    <%= f.text_field :message, class: "pl-0 pr-0 w-100 form-control-sm", id: "text", placeholder: "Type a message..."%>
+                  </div>
+                  <div class="col-2 tools text-center">
+                    <%= button_tag(type: 'submit', class: "hide-btn") do %>
+                      <i class="fa fa-telegram" aria-hidden="true"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- END OF CHATBOX -->
 </div>
-<script>
-  $('#send-btn').click(function(){
-    $.ajax({
-      url: '<%= messages_index_path %>',
-      type: 'POST',
-      dataType: 'script',
-      data: {message: $('#text').val()}
-    })
-    .done(function() {
-      console.log($('#text').val());
-    })
-    .fail(function() {
-      console.log("error");
-    })
-    .always(function() {
-      console.log("complete");
-    });
-  });
-</script>

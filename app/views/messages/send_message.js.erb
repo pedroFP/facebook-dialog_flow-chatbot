@@ -1,1 +1,3 @@
-$("#comments").append('</p><%= @message %></p>');
+$("#text").val('');
+$('#chat').append('<li class="pl-2 pr-2 bg-primary rounded text-white send-msg mb-1"> '+ '<%= @text %>' +'</li>' );
+$("#chat").append('<li class="p-1 rounded mb-1"><div class="receive-msg"><div class="receive-msg-desc mt-1 ml-1 pl-2 pr-2"><p class="pl-2 pr-2 rounded"><%= @message %></p></div></div></li>');
