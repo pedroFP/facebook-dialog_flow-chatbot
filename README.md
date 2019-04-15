@@ -59,3 +59,5 @@ end
 ```
 
 And there you go, you have your chatbot with Dialogflow!
+
+## If your start the rails server in the port ```3000``` and it doesn't work, try starting the server in another port like this ```$ rails s -p 3001```
